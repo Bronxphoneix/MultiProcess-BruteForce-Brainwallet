@@ -20,7 +20,7 @@ as
 8745
 1272
 4514 ....
-
+Not supported now  8 7 4 5 generating with  between space at passphares, only bruteforce
 Passphare and generate bitcoin adress and check it,
 
 if find balance > 0  write winner.txt
