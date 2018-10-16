@@ -21,6 +21,7 @@ as
 1272
 4514 ....
 Not supported now generating with between space at passphares, only bruteforce
+
 Not supported : 8 7 4 5  only generate 8745
 Passphare and generate bitcoin adress and check it,
 
