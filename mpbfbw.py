@@ -1,7 +1,7 @@
 # Plutus Bitcoin Brute Forcer
 # Made by Isaac Delly
-# Edited : BronxPhoneix
-# Added  : Brainwallet Generating
+# Edited : Bronx Phoneix
+# Added  : Brainwallet generating system
 # https://github.com/Isaacdelly/Plutus
 
 try:
@@ -27,39 +27,25 @@ except ImportError:
     import ecdsa
     import requests
 
-# quotation start
-#https://github.com/mobb111/ruby-brainwalet-destroyer
 class pause:
     p =0
 
 file = '1.txt'  #Config Fiename
 fobj = open(file).read().strip().split()
 c = len(fobj)
-n = '64'	#Config passphare length
+n = '4'	#Config passphare length
 
 	
 	
 def generate_private_key():
     a = [fobj[random.randrange(len(fobj))]
          for item in range(int(n))]
-
-#if you want passphare have space, change the lines to_string
-# remove this lines #
-		
-#    b = ' '.join(a)
-
-      
-# and add # this lines 
-    d = "" 		 #add this#
-    b = d.join(a) # add this #
+    d = "" 		 
+    b = d.join(a)
     v = (str(b))
     k = ''
     privatekey = hashlib.sha256(str(v).encode('utf-8')).hexdigest()
-#if want see generated passphare remove #	
-#    print ('Passphrase:' + ' ' + str(a))
     return privatekey
-    
-# quotation end
 
 def private_key_to_WIF(private_key):
     var80 = "80" + str(private_key) 
@@ -120,10 +106,9 @@ def worker(queue):
 def process(data, balance):
     private_key = data[0]
     address = data[1]
-    if (balance > 0):
-        print("{:<34}".format(str(address)) + ": " + str(balance))
     if (balance == 0):
-#if	find write winner.txt
+        print("{:<34}".format(str(address)) + ": " + str(balance))
+    if (balance > 0):
         file = open("winner.txt","a")
         file.write("address: " + str(address) + "\n" +
                    "private key: " + str(private_key) + "\n" +
