@@ -15,11 +15,13 @@ Change file name and passphare lenght,
 
 if pasphare lenght 4 this program generate
 
+as 
+
 8745
 1272
 4514 ....
 
-Passpahre and generate bitcoin adress and check it,
+Passphare and generate bitcoin adress and check it,
 
 
 
