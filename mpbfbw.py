@@ -1,6 +1,7 @@
 # Plutus Bitcoin Brute Forcer
 # Made by Isaac Delly
 # Edited : BronxPhoneix
+# Added  : Brainwallet Generating
 # https://github.com/Isaacdelly/Plutus
 
 try:
@@ -55,7 +56,7 @@ def generate_private_key():
     k = ''
     privatekey = hashlib.sha256(str(v).encode('utf-8')).hexdigest()
 #if want see generated passphare remove #	
-    print ('Passphrase:' + ' ' + str(a))
+#    print ('Passphrase:' + ' ' + str(a))
     return privatekey
     
 # quotation end
@@ -119,10 +120,10 @@ def worker(queue):
 def process(data, balance):
     private_key = data[0]
     address = data[1]
-    if (balance == 0):
-        print("{:<34}".format(str(address)) + ": " + str(balance))
     if (balance > 0):
-#if find, write winner.txt
+        print("{:<34}".format(str(address)) + ": " + str(balance))
+    if (balance == 0):
+#if	find write winner.txt
         file = open("winner.txt","a")
         file.write("address: " + str(address) + "\n" +
                    "private key: " + str(private_key) + "\n" +
