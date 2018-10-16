@@ -1,4 +1,6 @@
-# MultiProcess-BruteForce-Brainwallet
+Python 3+ Required
+
+MultiProcess-BruteForce-Brainwallet
 Work Multiple Process Brainwallet BruteForcer
 
 This Program generate bitcoin brain wallet and check balance unlimited rate api with multiprocess, 
