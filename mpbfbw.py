@@ -41,11 +41,21 @@ n = '64'	#Config passphare length
 def generate_private_key():
     a = [fobj[random.randrange(len(fobj))]
          for item in range(int(n))]
-    d = "" 		 
-    b = d.join(a)
+
+#if you want passphare have space, change the lines to_string
+# remove this lines #
+		
+#    b = ' '.join(a)
+
+      
+# and add # this lines 
+    d = "" 		 #add this#
+    b = d.join(a) # add this #
     v = (str(b))
     k = ''
     privatekey = hashlib.sha256(str(v).encode('utf-8')).hexdigest()
+#if want see generated passphare remove #	
+    print ('Passphrase:' + ' ' + str(a))
     return privatekey
     
 # quotation end
@@ -112,6 +122,7 @@ def process(data, balance):
     if (balance == 0):
         print("{:<34}".format(str(address)) + ": " + str(balance))
     if (balance > 0):
+#if find, write winner.txt
         file = open("winner.txt","a")
         file.write("address: " + str(address) + "\n" +
                    "private key: " + str(private_key) + "\n" +
